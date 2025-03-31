@@ -1,4 +1,11 @@
 // pieceLoader.js
+
+// Copyright (c) 2025 Csókosgéza
+// Minden jog fenntartva. / All rights reserved.
+
+console.log("%cSakk 3D Projekt v1.0 - Készítette: Csókosgéza", "color: blue; font-weight: bold;");
+
+
 import * as THREE from 'three';
 // Importáld a GLTFLoader-t a Three.js megfelelő helyéről
 // Az útvonal eltérhet attól függően, hogyan telepítetted a Three.js-t
