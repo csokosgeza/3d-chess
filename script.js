@@ -1,3 +1,8 @@
+// Copyright (c) 2025 Csókosgéza
+// Minden jog fenntartva. / All rights reserved.
+
+console.log("%cSakk 3D Projekt v1.0 - Készítette: Csókosgéza", "color: blue; font-weight: bold;");
+
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 // Importálás a chessLogic.js-ből
