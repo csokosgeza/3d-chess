@@ -3,39 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WebGL 3D Sakk</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Válassz Verziót - WebGL 3D Sakk</title>
+    <link rel="stylesheet" href="style_chooser.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <canvas id="chessCanvas"></canvas>
-	
-	<div id="container"></div>
-	
-	<div id="game-over-overlay" class="hidden">
-        <div id="game-over-box">
-            <h2 id="game-over-message"></h2>
-            <button id="new-game-button">Új Játék</button>
+    <div class="chooser-container">
+        <h1>WebGL 3D Sakk</h1>
+        <p>Kérlek, válassz egy Three.js verziót az alkalmazás indításához:</p>
+
+        <div class="button-group">
+            <a href="sakk_v150.html" class="version-button button-v150">
+                Indítás v0.150.0
+                <span class="button-subtext">(Stabil régebbi verzió)</span>
+            </a>
+            <a href="sakk_v152.html" class="version-button button-v152">
+                Indítás v0.152.0
+                <span class="button-subtext">(Ajánlott újabb verzió)</span>
+            </a>
         </div>
-    </div>
 
-    <div id="promotion-choice" class="hidden">
-        <h4>Válassz bábut:</h4>
-        <button data-promote-to="queen">Vezér</button>
-        <button data-promote-to="rook">Bástya</button>
-        <button data-promote-to="bishop">Futó</button>
-        <button data-promote-to="knight">Huszár</button>
+        <p class="info-text">
+            Különböző verziók teszteléshez vagy kompatibilitási okokból érhetők el.
+        </p>
     </div>
-
-    <script type="importmap">
-        {
-            "imports": {
-                "three": "https://unpkg.com/three@0.152.0/build/three.module.js",
-                "three/addons/": "https://unpkg.com/three@0.152.0/examples/jsm/"
-            }
-        }
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/20.0.3/tween.umd.js"></script>
-    <script type="module" src="chessLogic.js"></script>
-    <script type="module" src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebGL 3D Sakk</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <canvas id="chessCanvas"></canvas>
+	
+	<div id="container"></div>
+	
+	<div id="game-over-overlay" class="hidden">
+        <div id="game-over-box">
+            <h2 id="game-over-message"></h2>
+            <button id="new-game-button">Új Játék</button>
+        </div>
+    </div>
+
+    <div id="promotion-choice" class="hidden">
+        <h4>Válassz bábut:</h4>
+        <button data-promote-to="queen">Vezér</button>
+        <button data-promote-to="rook">Bástya</button>
+        <button data-promote-to="bishop">Futó</button>
+        <button data-promote-to="knight">Huszár</button>
+    </div>
+
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.152.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.152.0/examples/jsm/"
+            }
+        }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/20.0.3/tween.umd.js"></script>
+    <script type="module" src="chessLogic.js"></script>
+    <script type="module" src="script.js"></script>
+</body>
+</html>

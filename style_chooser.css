@@ -1,0 +1,109 @@
+/* Alap stílusok és reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Roboto', sans-serif; /* Modern, letisztult betűtípus */
+    line-height: 1.6;
+    background-color: #f4f7f6; /* Világos, semleges háttér */
+    color: #333;
+    display: flex; /* Középre igazításhoz */
+    justify-content: center; /* Vízszintes középre */
+    align-items: center; /* Függőleges középre */
+    text-align: center;
+}
+
+/* Központi tároló */
+.chooser-container {
+    background-color: #ffffff; /* Fehér háttér a tartalomnak */
+    padding: 40px 30px;
+    border-radius: 10px; /* Lekerekített sarkok */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Finom árnyék */
+    max-width: 500px; /* Maximális szélesség */
+    width: 90%; /* Reszponzivitás */
+}
+
+/* Cím */
+h1 {
+    color: #2c3e50; /* Sötétkék-szürke cím */
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+/* Bekezdések */
+p {
+    margin-bottom: 25px;
+    color: #555;
+    font-weight: 300;
+}
+
+/* Gomb csoport */
+.button-group {
+    display: flex; /* Gombok egymás mellett */
+    flex-direction: column; /* Mobilon egymás alatt */
+    gap: 15px; /* Térköz a gombok között */
+    margin-bottom: 25px;
+}
+
+/* Közös gomb stílusok */
+.version-button {
+    display: block; /* Teljes szélesség elfoglalása */
+    padding: 15px 20px;
+    border: none;
+    border-radius: 8px; /* Lekerekített sarkok */
+    text-decoration: none; /* Nincs aláhúzás */
+    font-size: 1.1em;
+    font-weight: 400;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s ease; /* Átmenetek */
+    color: #ffffff; /* Fehér szöveg */
+    position: relative;
+    overflow: hidden; /* Subtext elrejtéséhez, ha kellene */
+}
+
+.version-button:hover {
+    filter: brightness(1.1); /* Enyhe világosítás hoverre */
+}
+
+.version-button:active {
+    transform: scale(0.98); /* Kis "benyomódás" kattintásra */
+}
+
+/* Specifikus gomb színek */
+.button-v150 {
+    background-color: #3498db; /* Kék szín */
+}
+
+.button-v152 {
+    background-color: #2ecc71; /* Zöld szín */
+}
+
+/* Gomb alatti kis szöveg */
+.button-subtext {
+    display: block;
+    font-size: 0.8em;
+    font-weight: 300;
+    opacity: 0.9; /* Enyhén áttetsző */
+    margin-top: 4px;
+}
+
+/* Alsó információs szöveg */
+.info-text {
+    font-size: 0.9em;
+    color: #7f8c8d; /* Szürkés szín */
+    margin-bottom: 0; /* Nincs margó alatta */
+}
+
+/* Reszponzivitás (opcionális, ha egymás mellé akarod tenni nagyobb képernyőn) */
+@media (min-width: 600px) {
+    .button-group {
+        flex-direction: row; /* Nagyobb képernyőn egymás mellett */
+    }
+    .version-button {
+        flex: 1; /* Egyenlő szélesség a gomboknak */
+    }
+}
