@@ -1,5 +1,10 @@
 // chessLogic.js
 
+// Copyright (c) 2025 Csókosgéza
+// Minden jog fenntartva. / All rights reserved.
+
+console.log("%cSakk 3D Projekt v1.0 - Készítette: Csókosgéza", "color: blue; font-weight: bold;");
+
 export const BOARD_SIZE = 8;
 
 // --- Belső Tábla Állapota ---
