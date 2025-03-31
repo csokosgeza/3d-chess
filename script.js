@@ -100,6 +100,20 @@ directionalLight.shadow.camera.near = 0.5;
 directionalLight.shadow.camera.far = 50;
 scene.add(directionalLight);
 
+// renderer.shadowMap.type = THREE.PCFShadowMap; // Alapértelmezett, enyhe élsimítás
+// VAGY próbáld ki ezt keményebb árnyékokhoz:
+// renderer.shadowMap.type = THREE.BasicShadowMap;
+// VAGY ezt lágyabbhoz (ezzel nem lesz kontrasztosabb):
+// renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+
+// Válassz egy Tone Mapping algoritmust:
+// renderer.toneMapping = THREE.NoToneMapping; // Legnagyobb kontraszt, de "kifújhat" vagy túl sötét lehet
+// renderer.toneMapping = THREE.LinearToneMapping; // Lineáris, kevésbé kontrasztos
+// renderer.toneMapping = THREE.ACESFilmicToneMapping; // Filmszerű, általában jó kompromisszum
+// renderer.toneMapping = THREE.ReinhardToneMapping; // Másik opció
+// renderer.toneMappingExposure = 1.4; // Ezzel finomhangolhatod a kiválasztott tone mapping fényerejét (általában 1.0 jó)
+
+
 // --- Kamera Vezérlés ---
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;
