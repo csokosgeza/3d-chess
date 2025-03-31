@@ -1,0 +1,115 @@
+body {
+    margin: 0; /* Eltávolítja az alapértelmezett margót */
+    overflow: hidden; /* Megakadályozza a görgetősávok megjelenését */
+    background-color: #222; /* Sötét háttér */
+}
+
+#chessCanvas {
+    display: block; /* Biztosítja, hogy a vászon kitöltse a helyét */
+    width: 100vw; /* Teljes szélesség */
+    height: 100vh; /* Teljes magasság */
+}
+
+#container { width: 100%; height: 100%; }
+
+
+.hidden {
+    display: none
+}
+
+
+#promotion-choice {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(230, 230, 230, 0.9);
+    border: 2px solid #555;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    z-index: 100; /* Legyen a 3D vászon felett */
+    /*display: none;  Alapból rejtve */
+}
+
+#promotion-choice h4 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+#promotion-choice button {
+    padding: 10px 15px;
+    margin: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    border: 1px solid #888;
+    border-radius: 4px;
+    background-color: #fff;
+}
+
+#promotion-choice button:hover {
+    background-color: #ddd;
+}
+
+#game-over-overlay {
+    position: fixed; /* Fix pozíció a viewport-hoz képest */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Sötét áttetsző háttér */
+    display: flex; /* Flexbox a középre igazításhoz */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Legyen minden felett */
+    opacity: 0; /* Teljesen átlátszó */
+    visibility: hidden; /* Nem foglal helyet, nem kattintható */
+    transform: scale(0.8) translateY(20px); /* Kicsit kicsi és lejjebb van */
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out, visibility 0s linear 0.4s;
+    /* Áttűnés: opacity és transform 0.4 mp, visibility késleltetve */
+}
+
+#game-over-overlay.visible {
+    opacity: 1; /* Teljesen látható */
+    visibility: visible; /* Látható és kattintható */
+    transform: scale(1) translateY(0); /* Eredeti méret és pozíció */
+    transition-delay: 0s; /* Nincs késleltetés a láthatóvá válásnál */
+}
+
+#game-over-box {
+    background-color: #f0f0f0;
+    padding: 30px 40px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+#game-over-message {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #333;
+    white-space: pre-line; /* Kezeli a \n sortörést */
+    line-height: 1.3; /* Jobb sortávolság */
+}
+
+#new-game-button {
+    padding: 12px 25px;
+    font-size: 1.1em;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50; /* Zöld */
+    color: white;
+    transition: background-color 0.3s;
+}
+
+#new-game-button:hover {
+    background-color: #45a049;
+}
+
+
+#game-over-message {
+    white-space: pre-line; /* Ez kezeli a \n-t sortörésként */
+    /* Egyéb stílusok, pl. font-size, color ... */
+}
