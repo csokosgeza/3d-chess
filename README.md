@@ -2,6 +2,9 @@
 
 A 3D chess game built with Three.js that runs directly in your browser. This project showcases the use of WebGL for creating interactive 3D experiences.
 
+![Game Screenshot](chess3d.png)
+*(Itt helyezd el a képedet a repositoryban, és cseréld le a `placeholder_for_your_image.png`-t a kép tényleges nevére.)*
+
 ## Live Demo
 
 You can play the game live here: **[https://3d-chess-nine.vercel.app/](https://3d-chess-nine.vercel.app/)**
@@ -23,29 +26,53 @@ The game includes the following chess rules and features:
 
 ### Not Yet Implemented
 * **50-move rule**: The game does not currently track the 50-move rule for draws.
+* **Stalemate (Patt)**: Although the logic can detect a stalemate situation (no legal moves but not in check), this is not fully implemented in the game flow.
 * **Threefold repetition**: This rule for draws is also not implemented.
 
-## Customization
+## Configuration & Customization
 
-You can easily customize the appearance of the chess pieces. The 3D models for the pieces are loaded from the `assets/models/` directory. To use your own models, simply replace the `.glb` files in this directory with your own, making sure to keep the filenames the same:
-* `pawn.glb`
-* `rook.glb`
-* `knight.glb`
-* `bishop.glb`
-* `queen.glb`
-* `king.glb`
+The project is structured to allow for easy visual customization.
 
-The `pieceLoader.js` script handles the loading and initial scaling of these models.
+### Piece Models & Textures
+You can easily customize the appearance of the chess pieces. The 3D models for the pieces are loaded from the `assets/models/` directory. To use your own models, simply replace the `.glb` files in this directory with your own, making sure to keep the filenames the same: `pawn.glb`, `rook.glb`, `knight.glb`, `bishop.glb`, `queen.glb`, `king.glb`. The models can contain their own materials and textures, which will be loaded by the game.
 
-## Technology Stack
+### Piece & Board Colors
+The primary colors for the board and pieces are defined as constants at the beginning of the `script.js` file. You can change these hexadecimal values to alter the look of the game:
+* `WHITE_SQUARE_COLOR`: The color of the light squares.
+* `BLACK_SQUARE_COLOR`: The color of the dark squares.
+* `WHITE_PIECE_COLOR`: The material color for the white pieces.
+* `BLACK_PIECE_COLOR`: The material color for the black pieces.
+* `SELECTED_EMISSIVE_COLOR`: The highlight color for a selected piece.
 
-* **Graphics**: [Three.js](https://threejs.org/) (provides two versions, v0.150.0 and v0.152.0)
-* **Animation**: [Tween.js](https://github.com/tweenjs/tween.js/) for smooth piece animations
-* **Core Logic**: Vanilla JavaScript
+### Piece Size & Position
+* **Size**: The size of the pieces is dynamically scaled within the `pieceLoader.js` script. You can adjust the `desiredHeight` variable within the `loadModel` function to change the base height that all pieces are scaled to.
+* **Positioning**: For fine-tuning, the `PIECE_ADJUSTMENTS` constant in `script.js` allows you to set a specific vertical offset (`yOffset`) and initial rotation (`initialRotationY`) for each piece type. This is useful if your custom models have different origins.
+
+## Future Development
+
+Here are some potential features and improvements for the future:
+* **AI Opponent**: Implementing an AI of varying difficulty levels for single-player mode.
+* **Online Multiplayer**: Adding networking capabilities for players to compete against each other over the internet.
+* **Sound Effects**: Adding sounds for moves, captures, check, and other game events.
+* **Custom Themes**: Creating a system to easily switch between different model and color themes (e.g., "Wood", "Metal", "Fantasy").
+* **Move History & Annotation**: Displaying a list of moves made during the game (PGN format) and allowing for playback.
+* **Full Rule Implementation**: Adding the missing draw rules (50-move rule, threefold repetition).
 
 ## A Note on Language
 
 The comments within the source code are written in **Hungarian**. If you are interested in contributing or would like to better understand the code, I am happy to translate the comments to English upon request.
+
+## License
+
+This project is licensed under the MIT License. See the terms below.
+
+Copyright (c) 2025 Csókosgéza
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ## Support the Project
 
