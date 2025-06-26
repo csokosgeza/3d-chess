@@ -3,7 +3,6 @@
 A 3D chess game built with Three.js that runs directly in your browser. This project showcases the use of WebGL for creating interactive 3D experiences.
 
 ![Game Screenshot](chess3d.png)
-*(Itt helyezd el a képedet a repositoryban, és cseréld le a `placeholder_for_your_image.png`-t a kép tényleges nevére.)*
 
 ## Live Demo
 
